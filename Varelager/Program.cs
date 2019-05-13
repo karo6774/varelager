@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Varelager
 {
@@ -6,7 +6,12 @@ namespace Varelager
     {
         static void Main(string[] args)
         {
-            var storage = new MemoryStorage();
+            Storage storage;
+            if (args.Length >= 1)
+                storage = FileStorage.LoadFromFile(args[0]);
+            else
+                storage = new MemoryStorage();
+            
             var pages = new IPage[]
             {
                 new CreateItemPage(storage),
