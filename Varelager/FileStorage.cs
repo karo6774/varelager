@@ -44,9 +44,9 @@ namespace Varelager
             _path = path;
         }
         
-        public override void addItem(Item item)
+        public override void AddItem(Item item)
         {
-            base.addItem(item);
+            base.AddItem(item);
             using (var writer = File.AppendText(_path))
                 writer.WriteLine(SerializeItem(item));
         }

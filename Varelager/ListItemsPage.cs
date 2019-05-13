@@ -5,16 +5,16 @@ namespace Varelager
     public class ListItemsPage : IPage
     {
         public string Label => "List all items";
-        private readonly Storage _storage;
+        private readonly IStorage _storage;
 
-        public ListItemsPage(Storage storage)
+        public ListItemsPage(IStorage storage)
         {
             _storage = storage;
         }
         
         public void Execute()
         {
-            var items = _storage.listAllItems();
+            var items = _storage.ListAllItems();
             if (items.Length > 0)
             {
                 Console.WriteLine("All items:");

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace Varelager
 {
@@ -6,7 +6,7 @@ namespace Varelager
     {
         static void Main(string[] args)
         {
-            Storage storage;
+            IStorage storage;
             if (args.Length >= 1)
                 storage = FileStorage.LoadFromFile(args[0]);
             else

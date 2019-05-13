@@ -5,9 +5,9 @@ namespace Varelager
     public class CreateItemPage : IPage
     {
         public string Label => "Create new item";
-        private readonly Storage _storage;
+        private readonly IStorage _storage;
 
-        public CreateItemPage(Storage storage)
+        public CreateItemPage(IStorage storage)
         {
             _storage = storage;
         }
@@ -26,7 +26,7 @@ namespace Varelager
                 Console.WriteLine("Amount must be positive.");
 
             var item = new Item(name, amount);
-            _storage.addItem(item);
+            _storage.AddItem(item);
 
             Console.WriteLine($"Created {amount} of item named '{name}'.");
             Console.WriteLine();

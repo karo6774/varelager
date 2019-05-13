@@ -2,16 +2,16 @@ using System.Collections.Generic;
 
 namespace Varelager
 {
-    public class MemoryStorage : Storage
+    public class MemoryStorage : IStorage
     {
         protected readonly List<Item> Items = new List<Item>();
 
-        public virtual Item[] listAllItems()
+        public virtual Item[] ListAllItems()
         {
             return Items.ToArray();
         }
 
-        public virtual Item[] search(string keyword)
+        public virtual Item[] Search(string keyword)
         {
             var results = new List<Item>();
             foreach (var i in Items)
@@ -23,7 +23,7 @@ namespace Varelager
             return results.ToArray();
         }
 
-        public virtual void addItem(Item item)
+        public virtual void AddItem(Item item)
         {
             Items.Add(item);
         }

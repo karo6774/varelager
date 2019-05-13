@@ -1,9 +1,9 @@
 namespace Varelager
 {
-    public interface Storage
+    public interface IStorage
     {
-        Item[] listAllItems();
-        Item[] search(string keyword);
-        void addItem(Item item);
+        Item[] ListAllItems();
+        Item[] Search(string keyword);
+        void AddItem(Item item);
     }
 }
