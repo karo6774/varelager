@@ -6,12 +6,9 @@ namespace Varelager
     {
         static void Main(string[] args)
         {
-            IStorage storage;
-            if (args.Length >= 1)
-                storage = FileStorage.LoadFromFile(args[0]);
-            else
-                storage = new MemoryStorage();
-            
+            const string path = "storage.txt";
+            var storage = FileStorage.LoadFromFile(path);
+
             var pages = new IPage[]
             {
                 new CreateItemPage(storage),
