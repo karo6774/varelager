@@ -19,7 +19,9 @@ namespace Varelager
 
             Console.WriteLine();
             Console.WriteLine("Enter amount of the new item:");
-            var amount = Prompt.PromptInt();
+            int amount;
+            while ((amount = Prompt.PromptInt()) < 0) 
+                Console.WriteLine("Amount must be positive.");
 
             var item = new Item(name, amount);
             _storage.addItem(item);
