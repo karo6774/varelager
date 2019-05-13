@@ -25,6 +25,7 @@ namespace Varelager
             else
                 Console.WriteLine("No items.");
 
+            Console.WriteLine();
             Prompt.PromptPageExit();
         }
     }

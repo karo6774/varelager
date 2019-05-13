@@ -24,6 +24,7 @@ namespace Varelager
             else
                 Console.WriteLine("No items matched the given keyword.");
 
+            Console.WriteLine();
             Prompt.PromptPageExit();
         }
     }

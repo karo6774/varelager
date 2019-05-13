@@ -31,8 +31,8 @@ namespace Varelager
             Console.WriteLine(succeeded
                 ? $"Created {item}."
                 : $"An item with name '{name}' already exists.");
-            Console.WriteLine();
 
+            Console.WriteLine();
             Prompt.PromptPageExit();
         }
     }
