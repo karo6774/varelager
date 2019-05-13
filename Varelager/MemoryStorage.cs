@@ -4,17 +4,17 @@ namespace Varelager
 {
     public class MemoryStorage : Storage
     {
-        private readonly List<Item> _items = new List<Item>();
+        protected readonly List<Item> Items = new List<Item>();
 
-        public Item[] listAllItems()
+        public virtual Item[] listAllItems()
         {
-            return _items.ToArray();
+            return Items.ToArray();
         }
 
-        public Item[] search(string keyword)
+        public virtual Item[] search(string keyword)
         {
             var results = new List<Item>();
-            foreach (var i in _items)
+            foreach (var i in Items)
             {
                 if (i.Name.ToLower().Contains(keyword.ToLower()))
                     results.Add(i);
@@ -23,9 +23,9 @@ namespace Varelager
             return results.ToArray();
         }
 
-        public void addItem(Item item)
+        public virtual void addItem(Item item)
         {
-            _items.Add(item);
+            Items.Add(item);
         }
     }
 }
