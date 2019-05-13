@@ -26,9 +26,11 @@ namespace Varelager
                 Console.WriteLine("Amount must be positive.");
 
             var item = new Item(name, amount);
-            _storage.AddItem(item);
+            var succeeded = _storage.AddItem(item);
 
-            Console.WriteLine($"Created {amount} of item named '{name}'.");
+            Console.WriteLine(succeeded
+                ? $"Created {amount} of item named '{name}'."
+                : $"An item with name '{name}' already exists.");
             Console.WriteLine();
 
             Prompt.PromptPageExit();

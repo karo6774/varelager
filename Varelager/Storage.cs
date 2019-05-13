@@ -4,6 +4,6 @@ namespace Varelager
     {
         Item[] ListAllItems();
         Item[] Search(string keyword);
-        void AddItem(Item item);
+        bool AddItem(Item item);
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Varelager
 {
@@ -23,9 +24,12 @@ namespace Varelager
             return results.ToArray();
         }
 
-        public virtual void AddItem(Item item)
+        public virtual bool AddItem(Item item)
         {
+            if (Items.Any(it => it.Name == item.Name))
+                return false;
             Items.Add(item);
+            return true;
         }
     }
 }

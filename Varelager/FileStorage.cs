@@ -8,7 +8,7 @@ namespace Varelager
         {
             var storage = new FileStorage(path);
             if (!File.Exists(path)) return storage;
-            
+
             using (var reader = File.OpenText(path))
             {
                 string line;
@@ -43,12 +43,14 @@ namespace Varelager
         {
             _path = path;
         }
-        
-        public override void AddItem(Item item)
+
+        public override bool AddItem(Item item)
         {
-            base.AddItem(item);
-            using (var writer = File.AppendText(_path))
-                writer.WriteLine(SerializeItem(item));
+            var success = base.AddItem(item);
+            if (success)
+                using (var writer = File.AppendText(_path))
+                    writer.WriteLine(SerializeItem(item));
+            return success;
         }
     }
 }
