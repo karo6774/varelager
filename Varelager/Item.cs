@@ -10,5 +10,7 @@ namespace Varelager
             this.Name = name;
             this.Amount = amount;
         }
+
+        public override string ToString() => $"{Amount} of item named '{Name}'";
     }
 }

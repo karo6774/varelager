@@ -29,7 +29,7 @@ namespace Varelager
             var succeeded = _storage.AddItem(item);
 
             Console.WriteLine(succeeded
-                ? $"Created {amount} of item named '{name}'."
+                ? $"Created {item}."
                 : $"An item with name '{name}' already exists.");
             Console.WriteLine();
 

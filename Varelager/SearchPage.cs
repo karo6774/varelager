@@ -20,7 +20,7 @@ namespace Varelager
             var items = _storage.Search(keyword);
             if (items.Length > 0)
                 foreach (var item in items)
-                    Console.WriteLine($" {item.Amount} of item named '{item.Name}'");
+                    Console.WriteLine($" {item}");
             else
                 Console.WriteLine("No items matched the given keyword.");
 

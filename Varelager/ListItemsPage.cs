@@ -20,12 +20,10 @@ namespace Varelager
                 Console.WriteLine("All items:");
 
                 foreach (var item in items)
-                    Console.WriteLine($" {item.Amount} of item named '{item.Name}'");
+                    Console.WriteLine($" {item}");
             }
             else
-            {
                 Console.WriteLine("No items.");
-            }
 
             Prompt.PromptPageExit();
         }
